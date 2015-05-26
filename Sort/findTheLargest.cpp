@@ -13,17 +13,6 @@ int findTheLargest(int *num, int n){
     }
 }
 
-int findTheLargestRecursive(int *num, int h, int t){
-	if (n == 1) {
-        return num[0];
-
-    } else {
-        int max = findTheLargest(num, n-1);
-        //printf("Largest element : %d\n", max);
-        return num[n-1] > max ? num[n-1] : max;
-    }
-}
-
 int main(){
 	int n;
 	printf("Find the Greatest number in a list\nEnter the size of the list:");
