@@ -27,6 +27,7 @@ int main(){
 				tmp = num[j];
 				num[j] = num[j+1];
 				num[j+1] = tmp;
+				// optmized version avoind everything beyond the last swap
 				last = j;
 			}
 		}
