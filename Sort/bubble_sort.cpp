@@ -4,7 +4,7 @@
 
 int main(){
 	int n;
-	printf("Sort a list\nEnter the size of the list:");
+	printf("Bubble Sort a list\nEnter the size of the list:");
 	scanf("%d", &n);
 	
 	if(n <= 0)

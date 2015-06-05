@@ -23,7 +23,7 @@ int selection_sort(int * numbers, int n){
 
 int main(){
 	int n;
-	printf("Insertion Sort in a list\nEnter the size of the list:");
+	printf("Selection Sort a list\nEnter the size of the list:");
 	scanf("%d", &n);
 	
 	if(n <= 0)
@@ -40,7 +40,6 @@ int main(){
 	selection_sort(numbers, n);
 
 	for(int i = 1; i <= n; i++){
-		//numbers[i] = rand() % n;
 		printf("%d ", numbers[i]);
 	}
 	printf("\n");
