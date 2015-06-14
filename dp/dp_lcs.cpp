@@ -4,7 +4,7 @@
 
 int gen_random(char *s, int len) {
     const char alphanum[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    for (int i = 0; i < len; ++i) {
+    for (int i = 0; i <= len; ++i) {
         s[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
         printf("%c", s[i]);
     }
@@ -45,7 +45,7 @@ int lcs( char *X, char *Y, int m, int n)
 int main(){
 	
 	srand(time(0));
-	int n = rand() % 30;
+	int n = rand() % 30 + 1;
 	char *x = (char*)malloc(n * sizeof (int));
 	printf("X = ");
 	gen_random(x, n);
@@ -53,7 +53,7 @@ int main(){
 	
 	srand(time(0)+1);
 	printf("Y = ");
-	int m = rand() % 30;
+	int m = rand() % 30 + 1;
 	char *y = (char*)malloc(m * sizeof (int));
 	gen_random(y, m);
 	printf("\n");
