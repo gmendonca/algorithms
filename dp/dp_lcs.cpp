@@ -18,15 +18,14 @@ int max(int i, int j){
 	return j;
 }
 
-/* Returns length of LCS for X[0..m-1], Y[0..n-1] */
-int lcs( char *X, char *Y, int m, int n)
+int lcs( char *X, char *Y, int n, int m)
 {
-   int L[m+1][n+1];
+   int L[n+1][m+1];
    int i, j;
 
-   for (i = 0; i <= m; i++)
+   for (i = 0; i <= n; i++)
    {
-     for (j = 0; j <= n; j++)
+     for (j = 0; j <= m; j++)
      {
        if (i == 0 || j == 0)
          L[i][j] = 0;
@@ -39,7 +38,7 @@ int lcs( char *X, char *Y, int m, int n)
      }
    }
     
-   return L[m][n];
+   return L[n][m];
 }
 
 int main(){

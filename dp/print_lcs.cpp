@@ -18,14 +18,14 @@ int max(int i, int j){
 	return j;
 }
 
-int print_lcs( char *X, char *Y, int m, int n)
+int print_lcs( char *X, char *Y, int n, int m)
 {
-   int L[m+1][n+1];
+   int L[n+1][m+1];
    int i, j;
 
-   for (i = 0; i <= m; i++)
+   for (i = 0; i <= n; i++)
    {
-     for (j = 0; j <= n; j++)
+     for (j = 0; j <= m; j++)
      {
        if (i == 0 || j == 0)
          L[i][j] = 0;
@@ -38,27 +38,21 @@ int print_lcs( char *X, char *Y, int m, int n)
      }
    }
 
-   int index = L[m][n];
+   int index = L[n][m];
    int id = index; 
    char print_lcs[index+1];
    print_lcs[index] = 0;
  
-   // Start from the right-most-bottom-most corner and
-   // one by one store characters in lcs[]
-   i = m;
-   j = n;
+   i = n;
+   j = m;
    while (i > 0 && j > 0)
    {
-      // If current character in X[] and Y are same, then
-      // current character is part of LCS
       if (X[i-1] == Y[j-1])
       {
-          print_lcs[index-1] = X[i-1]; // Put current character in result
-          i--; j--; index--;     // reduce values of i, j and index
+          print_lcs[index-1] = X[i-1];
+          i--; j--; index--;
       }
  
-      // If not same, then find the larger of two and
-      // go in the direction of larger value
       else if (L[i-1][j] > L[i][j-1])
          i--;
       else
